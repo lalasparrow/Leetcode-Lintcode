@@ -1,3 +1,11 @@
+/**
+因为4sum太难想，干脆写了ksum。
+注意：
+1. 避免重复
+2. kSum的返回值是List<List<Integer>>
+3. 在返回的k-1 sum的list加入当前的numbers[i]
+**/
+
 public class Solution {
     /*
      * @param numbers: Give an array
