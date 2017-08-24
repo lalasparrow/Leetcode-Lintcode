@@ -1,5 +1,6 @@
 /*
-不知道为什么left初始值不能是0..是0的话有个test case过不了
+不知道为什么left初始值不能是0..是0的话有个test case过不了。
+难道是因为k=0的时候，在private function里面，不能除以0？
 
 */
 
