@@ -12,9 +12,15 @@
 这是后reverse和sort是一样的，但是因为要求用O(n)解答，所以用的reverse。
 时间复杂度: O(n)
 空间复杂度: O(1)
-
-
 */
+
+/*
+这题写了好几遍..怎么还是这样啊..
+错在了：
+1、第一个while要把相同的数字过掉
+2、要确保j是>=0的，这样在进入swap的流程，否则直接reverse
+*/
+
 
 public class Solution {
     public void nextPermutation(int[] nums) {
