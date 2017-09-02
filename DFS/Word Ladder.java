@@ -1,4 +1,14 @@
-/*注意start和end相同的情况，这样就不需要经过dict了*/
+/*注意:
+1. start和end相同的情况，这样就不需要经过dict了
+2. leetcode把输入dict变成list了，所以重新建立一个set把里面的值都加进去，这样contains的时候不会超时
+3. 注意small和big的判断条件要和最后next的判断条件相同，否则的话，会出错
+前面写的是beginSet.size() < endSet.size()，后面也要是这样，大于等于不要变。
+原因是，我们每次从small set开始出发找下一个词，最后要把small set原来的那个set，
+可能是beginSet或者是endSet，给变成next。找这个原来的set，需要同样的判断条件
+
+*/
+
+
 public class Solution {
     /**
       * @param start, a string
