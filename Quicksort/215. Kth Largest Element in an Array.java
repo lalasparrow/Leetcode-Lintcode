@@ -4,8 +4,9 @@
 2. pq: O(Nlogk)
 3. quicksort: O(N)
 注意：
-1. 是第k大，还是第k小
-
+1. 是第k大，还是第k小。
+kth largest：10 9 8 7 6 5 4，3th largest是8，由大往小排序，的第k个
+kth smallest：1 2 3 4 5 6 7，3th smallest是3，由小往大排序，的第k个
 */
 
 
