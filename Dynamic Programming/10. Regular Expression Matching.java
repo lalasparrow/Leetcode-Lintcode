@@ -2,6 +2,8 @@
 initialization:
 如果有*的话，可以消除前面一个char
 
+dp[0][0] = true;这一句一定要在最前面
+
 function:
 1. s在i-1，p在j-1的时候相等，或者p是.的话，
     dp[i][j] = dp[i-1][j-1];
@@ -48,5 +50,8 @@ public static boolean isMatch(String s, String p) {
             }                
         }
     }
+<<<<<<< HEAD
     return dp[m][n];
+=======
+>>>>>>> a0a0003491f381ecd88d58a9404fcd841517c73e
 }
