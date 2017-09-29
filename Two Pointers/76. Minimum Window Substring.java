@@ -62,6 +62,7 @@ class Solution {
                 size = j - i;
             }
             count[s.charAt(i)]++;
+            //小于0的时候是多减的
             if(count[s.charAt(i)] > 0){
                 curCount--;
             }

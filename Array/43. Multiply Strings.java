@@ -1,3 +1,8 @@
+/*
+注意第一个for循环里面，是products[i+j+1] += d1*d2;
+需要加上之前在里面的值
+*/
+
 class Solution {
     public String multiply(String num1, String num2) {
         int m = num1.length();
