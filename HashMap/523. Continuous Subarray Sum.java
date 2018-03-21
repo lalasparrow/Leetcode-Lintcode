@@ -42,10 +42,10 @@ class Solution {
             sum[i] = sum[i-1] + nums[i-1];
         }
         
-        
-        for(int i = 1; i < nums.length; i++){
-            for(int j = 0; j < i; j++){
-                int summ = sum[i] - sum[j] + nums[i];
+        for(int i = 1; i <= nums.length; i++){
+            for(int j = 0; j < i - 1; j++){
+                int summ = sum[i] - sum[j];
+                //为了处理k == 0这种情况
                 if((summ == k) || (k != 0 && summ%k == 0)){
                     return true;
                 }
@@ -55,4 +55,3 @@ class Solution {
         return false;
     }
 }
-

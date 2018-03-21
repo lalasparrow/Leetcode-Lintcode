@@ -1,27 +1,31 @@
-class Solution {
-    Map<Integer, List<Integer>> map = new HashMap<>();
-    Random rnd;
+/*
+ For the nth target, ++count is n. Then the probability that rnd.nextInt(++count)==0 is 1/n. Thus, the probability that return nth target is 1/n.
+ For (n-1)th target, the probability of returning it is (n-1)/n * 1/(n-1)= 1/n.
+ 
+ */
+//count用来记录当前的target的数量
+
+public class Solution {
+    
     int[] nums;
+    Random rnd;
+    
     public Solution(int[] nums) {
-        this.rnd = new Random();
         this.nums = nums;
-        
-        for(int i=0; i < nums.length; i++){
-            if(!map.containsKey(nums[i])){
-                map.put(nums[i], new ArrayList<>());
-            }
-            map.get(nums[i]).add(i);
-        }
+        this.rnd = new Random();
     }
     
     public int pick(int target) {
-        int size = map.get(target).size();
-        return map.get(target).get(rnd.nextInt(size));
+        int result = -1;
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != target)
+                continue;
+            if (rnd.nextInt(++count) == 0)//random出来是0的情况
+                                        //对于下一个数字，需要保证这一个不取，下一个取，所以才会是(n-1)/n * 1/(n-1) = 1/n
+                result = i;
+        }
+        
+        return result;
     }
 }
-
-/**
- * Your Solution object will be instantiated and called as such:
- * Solution obj = new Solution(nums);
- * int param_1 = obj.pick(target);
- */

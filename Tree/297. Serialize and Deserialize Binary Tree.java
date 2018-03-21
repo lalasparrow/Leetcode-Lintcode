@@ -38,6 +38,7 @@ public class Codec {
     private void helpSerialize(TreeNode root, StringBuilder sb){
         if(root == null){
             sb.append("#,");
+            //注意这里有个return！！！！
             return;
         }
         sb.append(root.val).append(",");
@@ -48,6 +49,7 @@ public class Codec {
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         Deque<String> dq = new LinkedList<>();
+        //注意这里要把它变成Collections之后才能addAll
         dq.addAll(Arrays.asList(data.split(",")));
         return helpDeserialize(dq);        
     }

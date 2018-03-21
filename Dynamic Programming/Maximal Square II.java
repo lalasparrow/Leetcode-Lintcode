@@ -1,3 +1,5 @@
+//只有对角线是1，其他的都是0
+
 public class Solution {
     /**
      * @param matrix a matrix of 0 and 1

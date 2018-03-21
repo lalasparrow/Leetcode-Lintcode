@@ -1,6 +1,10 @@
 /*
-如果n是MIN_VALUE的话，如果直接变成-n，不会变成MAX_VALUE，而是会变成其他的数字。因此+2，+2不改变奇偶性还有正负。
+如果n是MIN_VALUE的话，如果直接变成-n，不会变成MAX_VALUE，依旧是MIN_VALUE。因此+2，+2不改变奇偶性还有正负。
 n是MAX_VALUE的话没什么事。
+ Integer.MIN_VALUE = -2147483648
+ Integer.MAX_VALUE = 2147483647
+ -Inetger.MIN_VALUE = -2147483648
+ -Integer.MAX_VALUE = 2147483647
 */
 
 class Solution {

@@ -1,3 +1,13 @@
+题目：计算有没有使用加或者减的方法得到S
+问：整个数组的sum有大小的限制吗
+如果没有，用dp的话，需要用sum(以下的计算方法)来算整个dp数组的大小
+int sum = 0;
+for(int i=0; i < nums.length; i++){
+    sum += nums[i];
+}
+sum = 2*sum;
+
+The sum of elements in the given array will not exceed 1000.
 /*
 这题有官方答案：
 https://leetcode.com/problems/target-sum/solution/#solution
@@ -23,7 +33,7 @@ class Solution {
     }
     
 }
-/*2. 1D DP 时间复杂度：O(sum*n)
+/*2. 一维 DP 时间复杂度：O(sum*n)。dp存的是得到当前结果的方法个数
 注意：
 因为每次都要在上一次nums[i-1]得到的dp结果上面做加减，所以如果直接使用dp数组可能会毁了之前的结果，得到的结果是这次和上次的叠加。
 */
@@ -51,7 +61,7 @@ class Solution {
 
 
 
-/*3. 2D DP 时间复杂度：O(sum*n)
+/*3. 二维 DP 时间复杂度：O(sum*n)
 注意：
 1. 最后要判断一下S的大小
 2. 只有当dp[i-1][j+1000] > 0的时候，才进行dp的变换，因为0以及0以下都没有必要了。

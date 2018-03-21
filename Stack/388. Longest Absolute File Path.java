@@ -17,7 +17,7 @@ class Solution {
         Stack<Integer> stack = new Stack<>();
         stack.push(0);
         for(String str : strs){
-            int level = str.lastIndexOf("\t")+1;
+            int level = str.lastIndexOf("\t")+1;// number of "\t"
             while(stack.size() > level+1){
                 stack.pop();
             }

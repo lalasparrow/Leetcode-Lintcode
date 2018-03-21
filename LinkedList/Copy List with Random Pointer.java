@@ -55,3 +55,37 @@ public class Solution {
         return dummy.next;
     }
 }
+
+Space： O(1)
+
+public RandomListNode copyRandomList(RandomListNode head) {
+    if (head == null)
+        return null;
+    RandomListNode cur = head;
+    while (cur != null) {
+        RandomListNode newNode = new RandomListNode(cur.label);
+        newNode.next = cur.next;
+        cur.next = newNode;
+        cur = cur.next.next;
+    }
+    cur = head;
+    while (cur != null) {
+        if (cur.random != null){
+            //新建出来的node的random也要指向新建出来的random
+            cur.next.random = cur.random.next;
+        }
+
+        cur = cur.next.next;
+    }
+    cur = head;
+    RandomListNode newHead = head.next;
+    while (cur != null) {
+        RandomListNode newNode = cur.next;
+        cur.next = newNode.next;
+        cur = cur.next;
+        if (cur != null){
+            newNode.next = cur.next;
+        }
+    }
+    return newHead;
+}
